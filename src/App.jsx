@@ -28,14 +28,14 @@ function Searchbar(){
     )
     
 }
+fu
 
-
-// function  Weatherdisplay(){
-//   const [address,setAddress] =useState('');
-//   return <div>
-//         {address}
-//         <h3>{country}</h3>
-//   </div>
-// }
+function  Weatherdisplay(){
+  const [address,setAddress] =useState('');
+  return <div>
+        {address}
+        <h3>{country}</h3>
+  </div>
+}
 
 export default App
