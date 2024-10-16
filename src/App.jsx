@@ -3,39 +3,38 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
+  const [input, setInput] = useState('');
 
   return (
-   
-      <div>
-        <Searchbar/>
-      {/* <Weatherdisplay/> */}
-      </div>
-   
+    <div>
+      <Searchbar input={input} setInput={setInput} />
+    </div>
   )
 }
-function Searchbar(){
-  const [input,setInput] =useState('');
-    return (
-      <div className="flex justify-center items-center h-screen">
+function Searchbar({input,setInput}){
+
+  return (
+    <div className="flex flex-col justify-center items-center h-screen">
+      <div>
+
       <input 
-        className="text-center border-black	border-solid"
+        className="text-center border-black border-solid mb-4"
         type="text"
         placeholder="Enter the location, country"
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
+      <button className='bg-[#1da1f2] text-white rounded-sm'
+       onClick={calculatetemp}>search</button>
       </div>
-    )
-    
-}
-fu
+      <div className="text-center">
+        {input}
+        <h3> india</h3>
+        {/* <h3> { degree}</h3> */}
 
-function  Weatherdisplay(){
-  const [address,setAddress] =useState('');
-  return <div>
-        {address}
-        <h3>{country}</h3>
-  </div>
+      </div>
+    </div>
+  )
 }
 
-export default App
+ export default App
