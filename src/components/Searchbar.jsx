@@ -3,7 +3,7 @@ import React from "react";
 import{ useState } from 'react'
 
 function Searchbar() {
-    const [city, setCity] = useState("");
+    const [city, setCity] = useState('');
     const [weatherData, setWeatherData] = useState(null);
 
     async function calculatetemp() {
@@ -26,7 +26,12 @@ return (
                 type="text"
                 placeholder="Enter the city"
                 value={city}
-                onChange={(e) => setCity(e.target.value)}
+                onChange={(e) => {
+                    setCity(e.target.value);
+                    if (e.target.value === '') {
+                        setWeatherData(null);
+                    }
+                }}
             />
             <button
                 className="bg-[#1da1f2] text-white rounded-sm"
@@ -39,7 +44,7 @@ return (
         <div className="text-center">{city}</div>
         {weatherData && weatherData.data && weatherData.data.current && (
             <div>
-                    <h3>Temp:{weatherData.data.current.temp_c}°C</h3>
+                <h3>Temp: {weatherData.data.current.temp_c}°C</h3>
             </div>
         )}
     </div>
