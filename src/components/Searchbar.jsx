@@ -19,10 +19,10 @@ function Searchbar() {
       }
     }
 return (
-    <div className="flex flex-col justify-center items-center h-screen">
+    <div className="flex flex-col justify-center items-center h-screen space-y-4">
         <div>
             <input
-                className="text-center border border-black border-solid mb-4"
+                className="text-center border border-black border-solid mb-4 rounded-md"
                 type="text"
                 placeholder="Enter the city"
                 value={city}
@@ -34,11 +34,11 @@ return (
                 }}
             />
             <button
-                className="bg-[#1da1f2] text-white rounded-sm"
+                className="bg-[#1da1f2] text-white rounded-md ml-2"
                 onClick={calculatetemp}
                 type="submit"
             >
-                get weather
+                Get Weather
             </button>
         </div>
         <div className="text-center">{city}</div>
