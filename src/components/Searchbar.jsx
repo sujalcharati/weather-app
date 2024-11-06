@@ -19,10 +19,10 @@ function Searchbar() {
       }
     }
 return (
-    <div className="flex flex-col justify-center items-center h-screen space-y-4">
-        <div>
+    <div className="flex flex-col justify-center items-center h-screen space-y-4 bg-blue-100 p-4">
+        <div className="bg-white p-6 rounded-lg shadow-lg">
             <input
-                className="text-center border border-black border-solid mb-4 rounded-md"
+                className="text-center border border-gray-300 mb-4 p-2 rounded-md w-full"
                 type="text"
                 placeholder="Enter the city"
                 value={city}
@@ -31,20 +31,21 @@ return (
                     if (e.target.value === '') {
                         setWeatherData(null);
                     }
+                    
                 }}
             />
             <button
-                className="bg-[#1da1f2] text-white rounded-md ml-2"
+                className="bg-blue-500 text-white rounded-md px-4 py-2 w-full"
                 onClick={calculatetemp}
                 type="submit"
             >
                 Get Weather
             </button>
         </div>
-        <div className="text-center">{city}</div>
+        <div className="text-center text-xl font-semibold">{city}</div>
         {weatherData && weatherData.data && weatherData.data.current && (
-            <div>
-                <h3>Temp: {weatherData.data.current.temp_c}°C</h3>
+            <div className="bg-white p-6 rounded-lg shadow-lg mt-4">
+                <h3 className="text-2xl font-bold">Temp: {weatherData.data.current.temp_c}°C</h3>
             </div>
         )}
     </div>
