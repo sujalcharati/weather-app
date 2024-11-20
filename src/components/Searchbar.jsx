@@ -19,7 +19,7 @@ function Searchbar() {
       }
     }
 return (
-    <div className="flex flex-col justify-center items-center h-screen space-y-4 bg-blue-100 p-4">
+    <div className="flex flex-col justify-center items-center h-screen space-y-4 bg-cover bg-center bg-weather-pattern">
         <div className="bg-white p-6 rounded-lg shadow-lg">
             <input
                 className="text-center border border-gray-300 mb-4 p-2 rounded-md w-full"
