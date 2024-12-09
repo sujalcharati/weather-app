@@ -44,7 +44,13 @@ return (
         <div className="text-center text-xl font-semibold">{city}</div>
         {weatherData && weatherData.data && weatherData.data.current && (
             <div className="bg-white p-6 rounded-lg shadow-lg mt-4">
-                <h3 className="text-2xl font-bold">Temp: {weatherData.data.current.temp_c}°C</h3>
+                <div className="flex flex-row justify-center items-center space-x-4">
+                    <h3 className="text-2xl font-bold">Temp: {weatherData.data.current.temp_c}°C</h3>
+                    <img src="https://www.weatherbit.io/static/img/icons/c01d.png" alt="cloud icon" className="w-12 h-12" />
+                </div>
+                <h3 className="text-2xl font-bold">Feels like: {weatherData.data.current.feelslike_c}°C</h3>
+                <h3 className="text-2xl font-bold">Wind: {weatherData.data.current.wind_kph} Km/hr</h3>
+           
             </div>
         )}
     </div>
