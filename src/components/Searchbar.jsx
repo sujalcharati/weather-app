@@ -1,14 +1,18 @@
 import axios from "axios";
 import React from "react";
 import{ useState } from 'react'
+import dotenv from 'dotenv';
+dotenv.config();
 
 function Searchbar() {
     const [city, setCity] = useState('');
     const [weatherData, setWeatherData] = useState(null);
-    const [currentstatus,setCurrentstatus] =useState('')
+    // const [currentstatus,setCurrentstatus] =useState('')
 
     async function calculatetemp() {
-      const api_key = "23dc27e2cd36408ca75130328240708";
+  
+    const api_key = import.meta.env.REACT_APP_WEATHER_KEY;
+
       try {
         const res = await axios.get(
           `http://api.weatherapi.com/v1/current.json?key=${api_key}&q=${city}&aqi=yes`
