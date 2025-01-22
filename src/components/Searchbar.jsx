@@ -5,7 +5,6 @@ import{ useState } from 'react'
 function Searchbar() {
     const [city, setCity] = useState('');
     const [weatherData, setWeatherData] = useState(null);
-    // const [currentstatus,setCurrentstatus] =useState('')
 
     async function calculatetemp() {
   
