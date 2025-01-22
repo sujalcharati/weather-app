@@ -1,8 +1,6 @@
 import axios from "axios";
 import React from "react";
 import{ useState } from 'react'
-import dotenv from 'dotenv';
-dotenv.config();
 
 function Searchbar() {
     const [city, setCity] = useState('');
